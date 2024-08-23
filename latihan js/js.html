@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="name">Status Ayah</label>
+        
+        <div>
+            <input type="radio" name="status" id="h" value="h" onclick="changeLabel(this)">
+            <label for="h">Masih Hidup</label>
+
+            <input type="radio" name="status" id="m" value="m" onclick="changeLabel(this)">
+            <label for="m">Sudah Meninggal</label>
+            
+            <input type="radio" name="status" id="u" value="u" onclick="changeLabel(this)">
+            <label for="u">Tidak Diketahui</label>
+        </div>
+        <div id="wrapper">
+        </div>
+    </form>
+
+    <script>
+        function changeLabel(e) {
+            if (e.value == "h") {
+                document.getElementById('wrapper').innerHTML = `
+                <label for="name" id="label-name">Pendidikan Ayah</label>
+                    <select name="pendidikan">
+                    <option selected disabled hidden>Pilih Opsi</option>
+                    <option>SD</option>
+                    <option>SMP</option>
+                    <option>SMA/SMK</option>
+                    <option>Diploma(D3/D4)</option>
+                    <option>Sarjana(S1)</option>
+                    <option>Magister(S2)</option>
+                    <option>Doktor(S3)</option>
+                </select>
+                <label for="name" id="label-name">Pekerjaan Ayah</label>
+                    <select name="kerjar">
+                    <option selected disabled hidden>Pilih Opsi</option>
+                    <option>Petani</option>
+                    <option>Pedagang</option>
+                    <option>Buruh</option>
+                    <option>Doktor</option>
+                    <option>Guru</option>
+                    <option>Karyawan Swasta</option>
+                    <option>Lainnya></option>
+                </select>
+
+                <label for="name" id="label-name">Deskripsi Pekerjaan Ayah</label>
+                <input type="text" name="pekerjaan" id="pekerjaan" placeholder="Tuliskan nama spesifikasi pekerjaan">
+                
+                <label for="name" id="label-name">Total Penghasilan Ayah Perbulan</label>
+                <input type="number" name="hasil" id="hasil">
+                <p>bila tidak memiliki penghasilan tulis "0"</p>
+                
+                <label for="name" id="label-name">Detail Ayah bekerja, berapa lama sudah bekerja, kondisi kesehatan, dan kondisi karir profesinya</label>
+                <input type="text" name="detail" id="detail">
+                `;
+
+                document.getElementById('wrapper').style.display = "block";
+
+            } else if (e.value == "m") {
+                document.getElementById('wrapper').innerHTML = `
+                <label for="name" id="label-name">Pendidikan Ayah</label>
+                    <select name="pendidikan">
+                    <option selected disabled hidden>Pilih Opsi</option>
+                    <option>SD</option>
+                    <option>SMP</option>
+                    <option>SMA/SMK</option>
+                    <option>Diploma(D3/D4)</option>
+                    <option>Sarjana(S1)</option>
+                    <option>Magister(S2)</option>
+                    <option>Doktor(S3)</option>
+                </select>
+                <label for="name" id="label-name">Pekerjaan Ayah</label>
+                    <select name="kerjar">
+                    <option selected disabled hidden>Pilih Opsi</option>
+                    <option>Petani</option>
+                    <option>Pedagang</option>
+                    <option>Buruh</option>
+                    <option>Doktor</option>
+                    <option>Guru</option>
+                    <option>Karyawan Swasta</option>
+                    <option>Lainnya></option>
+                </select>
+
+                <label for="name" id="label-name">Deskripsi Pekerjaan Ayah</label>
+                <input type="text" name="pekerjaan" id="pekerjaan" placeholder="Tuliskan nama spesifikasi pekerjaan">
+                
+                <label for="name" id="label-name">Total Penghasilan Ayah Perbulan</label>
+                <input type="number" name="hasil" id="hasil">
+                <p>bila tidak memiliki penghasilan tulis "0"</p>
+                
+                <label for="name" id="label-name">Detail Pekerjaan Ayah Semasa Hidup</label>
+                <input type="text" name="detail" id="detail">
+                `;
+
+                document.getElementById('wrapper').style.display = "block";
+
+            } else {
+                document.getElementById('wrapper').style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
